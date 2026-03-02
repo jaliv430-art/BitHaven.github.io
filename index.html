@@ -9,31 +9,43 @@
         body {
             margin: 0;
             font-family: Arial, sans-serif;
-            background: white;
-            color: black;
+            background: #000000; /* Digital black */
+            color: #ffffff;
             overflow-y: scroll;
+        }
+
+        /* Neon Glow Effect */
+        .neon-blue {
+            color: #00ccff;
+            text-shadow: 0 0 10px #00ccff, 0 0 20px #00ccff, 0 0 40px #00ccff;
+        }
+
+        .neon-red {
+            color: #ff2b2b;
+            text-shadow: 0 0 10px #ff2b2b, 0 0 20px #ff2b2b, 0 0 40px #ff2b2b;
         }
 
         /* Top Title Frame */
         .top-frame {
-            background: #f2f2f2;
+            background: #0d0d0d;
             padding: 25px;
             text-align: center;
-            border-bottom: 3px solid #ccc;
+            border-bottom: 3px solid #00ccff;
+            box-shadow: 0 0 20px #00ccff;
         }
 
         .top-frame h1 {
             margin: 0;
             font-size: 3rem;
-            color: #007bff; /* Blue Title */
-            letter-spacing: 2px;
+            letter-spacing: 3px;
         }
 
         /* Digital Icon */
         .icon {
             display: block;
             margin: 20px auto 0 auto;
-            width: 120px;
+            width: 130px;
+            filter: drop-shadow(0 0 10px #00ccff);
         }
 
         .container {
@@ -44,32 +56,33 @@
 
         /* Bio Section */
         .bio-box {
-            background: #f7f7f7;
+            background: #111111;
             padding: 25px;
             border-radius: 10px;
-            border: 2px solid #ddd;
+            border: 2px solid #00ccff;
             margin-bottom: 40px;
+            box-shadow: 0 0 20px #00ccff;
         }
 
-        /* Grey Frames */
+        /* Neon Grey Frames */
         .frame {
-            background: #e6e6e6;
+            background: #1a1a1a;
             padding: 25px;
             border-radius: 10px;
-            border: 2px solid #ccc;
+            border: 2px solid #555;
             margin-bottom: 40px;
+            box-shadow: 0 0 15px #444;
         }
 
         .frame h2 {
             margin: 0;
             font-size: 1.8rem;
-            color: red; /* Red top text */
         }
 
         .frame p {
             margin-top: 10px;
             font-size: 1.3rem;
-            color: black; /* Bottom text */
+            color: #ffffff;
         }
     </style>
 </head>
@@ -78,11 +91,11 @@
 
     <!-- Top Frame -->
     <div class="top-frame">
-        <h1>Bithaven</h1>
+        <h1 class="neon-blue">Bithaven</h1>
 
-        <!-- Digital Icon (SVG) -->
+        <!-- Digital Neon Icon (SVG) -->
         <svg class="icon" viewBox="0 0 100 100">
-            <rect x="10" y="10" width="80" height="80" rx="10" fill="#1a1a1a" stroke="#00ccff" stroke-width="4"/>
+            <rect x="10" y="10" width="80" height="80" rx="10" fill="#0d0d0d" stroke="#00ccff" stroke-width="4"/>
             <rect x="25" y="25" width="50" height="10" fill="#00ccff"/>
             <rect x="25" y="45" width="50" height="10" fill="#00ccff"/>
             <rect x="25" y="65" width="50" height="10" fill="#00ccff"/>
@@ -93,24 +106,23 @@
 
         <!-- Bio -->
         <div class="bio-box">
-            <h2>About Bithaven</h2>
+            <h2 class="neon-blue">About Bithaven</h2>
             <p>
-                Bithaven is a digital game platform built for players, creators, and innovators. 
-                It focuses on delivering interactive experiences, community-driven features, and 
-                a modern approach to online gaming. Designed for creativity and fun, Bithaven 
-                aims to become a hub for the next generation of digital entertainment.
+                Bithaven is a futuristic digital game platform built for players, creators, and innovators. 
+                Designed with a neon cyber‑style interface, Bithaven focuses on immersive gameplay, 
+                community-driven features, and next‑generation digital entertainment.
             </p>
         </div>
 
         <!-- Frame 1 -->
         <div class="frame">
-            <h2>Jacob Hurst</h2>
+            <h2 class="neon-red">Jacob Hurst</h2>
             <p>CEO of Bithaven</p>
         </div>
 
         <!-- Frame 2 -->
         <div class="frame">
-            <h2>Zray</h2>
+            <h2 class="neon-red">Zray</h2>
             <p>Co-Founder of Bithaven</p>
         </div>
 
