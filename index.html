@@ -9,12 +9,11 @@
         body {
             margin: 0;
             font-family: Arial, sans-serif;
-            background: #000000; /* Digital black */
+            background: #000000;
             color: #ffffff;
             overflow-y: scroll;
         }
 
-        /* Neon Glow Effect */
         .neon-blue {
             color: #00ccff;
             text-shadow: 0 0 10px #00ccff, 0 0 20px #00ccff, 0 0 40px #00ccff;
@@ -25,7 +24,6 @@
             text-shadow: 0 0 10px #ff2b2b, 0 0 20px #ff2b2b, 0 0 40px #ff2b2b;
         }
 
-        /* Top Title Frame */
         .top-frame {
             background: #0d0d0d;
             padding: 25px;
@@ -40,7 +38,6 @@
             letter-spacing: 3px;
         }
 
-        /* Digital Icon */
         .icon {
             display: block;
             margin: 20px auto 0 auto;
@@ -54,7 +51,6 @@
             margin: auto;
         }
 
-        /* Bio Section */
         .bio-box {
             background: #111111;
             padding: 25px;
@@ -64,7 +60,6 @@
             box-shadow: 0 0 20px #00ccff;
         }
 
-        /* Neon Grey Frames */
         .frame {
             background: #1a1a1a;
             padding: 25px;
@@ -84,16 +79,31 @@
             font-size: 1.3rem;
             color: #ffffff;
         }
+
+        .countdown-box {
+            background: #0d0d0d;
+            padding: 25px;
+            border-radius: 10px;
+            border: 2px solid #00ccff;
+            margin-top: 40px;
+            text-align: center;
+            box-shadow: 0 0 20px #00ccff;
+        }
+
+        .countdown-text {
+            font-size: 2rem;
+            margin-top: 10px;
+            color: #00ccff;
+            text-shadow: 0 0 10px #00ccff, 0 0 20px #00ccff;
+        }
     </style>
 </head>
 
 <body>
 
-    <!-- Top Frame -->
     <div class="top-frame">
         <h1 class="neon-blue">Bithaven</h1>
 
-        <!-- Digital Neon Icon (SVG) -->
         <svg class="icon" viewBox="0 0 100 100">
             <rect x="10" y="10" width="80" height="80" rx="10" fill="#0d0d0d" stroke="#00ccff" stroke-width="4"/>
             <rect x="25" y="25" width="50" height="10" fill="#00ccff"/>
@@ -104,29 +114,53 @@
 
     <div class="container">
 
-        <!-- Bio -->
         <div class="bio-box">
             <h2 class="neon-blue">About Bithaven</h2>
             <p>
-                Bithaven is a futuristic digital game platform built for players, creators, and innovators. 
-                Designed with a neon cyber‑style interface, Bithaven focuses on immersive gameplay, 
+                Bithaven is a futuristic digital game platform built for players, creators, and innovators.
+                Designed with a neon cyber‑style interface, Bithaven focuses on immersive gameplay,
                 community-driven features, and next‑generation digital entertainment.
             </p>
         </div>
 
-        <!-- Frame 1 -->
         <div class="frame">
             <h2 class="neon-red">Jacob Hurst</h2>
             <p>CEO of Bithaven</p>
         </div>
 
-        <!-- Frame 2 -->
         <div class="frame">
             <h2 class="neon-red">Zray</h2>
             <p>Co-Founder of Bithaven</p>
         </div>
 
+        <div class="countdown-box">
+            <h2 class="neon-blue">Bithaven Release Countdown</h2>
+            <p id="countdown" class="countdown-text"></p>
+        </div>
+
     </div>
+
+    <script>
+        const releaseDate = new Date("July 18, 2026 00:00:00").getTime();
+
+        const timer = setInterval(function() {
+            const now = new Date().getTime();
+            const distance = releaseDate - now;
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            document.getElementById("countdown").innerHTML =
+                days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
+
+            if (distance < 0) {
+                clearInterval(timer);
+                document.getElementById("countdown").innerHTML = "Bithaven is now LIVE!";
+            }
+        }, 1000);
+    </script>
 
 </body>
 </html>
